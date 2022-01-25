@@ -1,0 +1,16 @@
+<html>
+{% load static %}
+<head></head>
+<link rel="stylesheet" href="{% static 'css/insert.css' %}">
+<body>
+<br><br><br><h1><center>Student Data Insertion Form</center></h1><br><br>
+<div class="container" align="center">
+    <form method="POST" >
+        {{form.as_p}}
+        {% csrf_token %}
+        <input class="btn btn-primary btn-lg" type="submit" value="Insert">
+    </form>
+    <a class="btn btn-primary btn-lg" href="/retrive"><button>Save</button></a>
+</div>
+</body>
+</html>

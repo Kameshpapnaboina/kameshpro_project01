@@ -1,0 +1,37 @@
+<html>
+{% load static %}
+<head></head>
+<link rel="stylesheet" href="{% static 'css/retrive.css' %}">
+<body>
+<h1><center>WELCOME TO STUDENT DATA VERIFICATION PLATFORM</center></h1>
+    <h3><a href="/insert"><button class="btn btn-primary">Insert</button></a></h3><hr>
+    <div class="container" align="center">
+        <table>
+            <thead>
+            <tr>
+                <td>STUDENT NAME</td>
+                <td>STUDENT ROLLNO</td>
+                <td>STUDENT EMAIL</td>
+                <td>STUDENT MOBILE</td>
+                <td>STUDENT ADDRESS</td>
+                <td>STUDENT QUALIFICATION</td>
+                <td>MODIFICATIONS</td>
+            </tr>
+            </thead><br>
+            {% for data in model %}
+            <tr>
+                <td>{{data.stdname}}</td>
+                &nbsp&nbsp<td>{{data.stdrollno}}</td>
+                &nbsp&nbsp<td>{{data.stdemail}}</td>
+                &nbsp&nbsp<td>{{data.stdmobile}}</td>
+                &nbsp&nbsp<td>{{data.stdaddress}}</td>
+                <td>{{data.stdqualification}}</td>
+                <td><a href="/update/{{data.id}}" class="btn btn-primary btn-lg" id="{{data.id}}"><button>Edit</button></a>&nbsp&nbsp&nbsp<a href="/delete/{{data.id}}" class="btn btn-warning" id="{{data.id
+                }}"><button>Delete</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</body>
+</html>

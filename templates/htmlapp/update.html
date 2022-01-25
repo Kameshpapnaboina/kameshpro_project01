@@ -1,0 +1,16 @@
+<html>
+{% load static %}
+<head></head>
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+<body>
+<br><br><br><h1><center>Student Data updation Form</center></h1><br><br>
+<div class="container" align="center">
+    <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input class="btn btn-primary btn-lg" type="submit" value="Save">
+        &nbsp&nbsp&nbsp<button class="btn btn-primary" href="/retrive">Back</button>
+    </form>
+</div>
+</body>
+</html>
